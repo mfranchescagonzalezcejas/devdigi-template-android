@@ -1,0 +1,19 @@
+context:
+  project: devdigi-template-base
+  purpose: public-safe SDD bootstrap template
+  scope: technology-agnostic initialization only
+  notes:
+    - no stack-specific tooling recorded
+    - no local paths, users, or environment data recorded
+    - keep future artifacts minimal and phase-focused
+strict_tdd: false
+testing:
+  test_runner: none
+  test_layers:
+    unit: false
+    integration: false
+    e2e: false
+  coverage: false
+  linter: none
+  type_checker: none
+  formatter: none
