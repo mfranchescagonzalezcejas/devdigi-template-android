@@ -22,3 +22,11 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.swp
+
+# Android / Gradle local outputs
+.gradle/
+**/build/
+local.properties
+captures/
+*.apk
+*.aab

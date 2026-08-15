@@ -1,6 +1,6 @@
-# Repository Template Baseline
+# Android Template Baseline
 
-This repository is a public-safe starting point for adopting project governance and GitHub intake templates. It is not an application, product description, or runtime guide.
+This repository is a public-safe, minimal Android starting point: one neutral Compose app plus the inherited governance and intake templates. It is not a product architecture or release-ready application.
 
 ## Included assets
 
@@ -8,19 +8,20 @@ This repository is a public-safe starting point for adopting project governance 
 - [`docs/repository-engineering.md`](docs/repository-engineering.md) for durable repository-operating decisions and evidence.
 - `SECURITY.md` for private vulnerability reporting expectations.
 - `AGENTS.md` and `CONTRIBUTING.md` for change and review practices.
+- The Gradle version catalog and wrapper for the approved Android toolchain.
 - GitHub issue forms and a pull request template for structured intake.
 
 ## Boundaries
 
-This baseline deliberately excludes application code, stack tooling, automation, infrastructure, remote configuration, and a default license. Add those only after the adopter has made and recorded the relevant decisions.
+This baseline deliberately excludes product architecture, CI provider configuration, hooks, dependency bots, signing, publishing, infrastructure, remote configuration, and a default license. Add those only after the adopter records the relevant decisions.
 
 ## Adopt this template
 
-1. Complete `BOOTSTRAP.md`, including ownership, `<LICENSE_DECISION>`, `<PROJECT_CONVENTIONS>`, and `<STACK_DECISION>`.
+1. Complete `BOOTSTRAP.md`, including ownership, identifiers, signing/release decisions, and `<LICENSE_DECISION>`.
 2. Record unresolved repository-operating decisions and evidence in the [repository engineering contract](docs/repository-engineering.md).
 3. Define and test `<SECURITY_CONTACT_OR_PRIVATE_CHANNEL>` before publication.
 4. Close or remove `BOOTSTRAP.md` after the decisions are recorded.
-5. Add stack-specific guidance only when it is chosen and justified by the adopted repository.
+5. Run the canonical local checks: `./gradlew assembleDebug`, `./gradlew lint`, and `./gradlew testDebugUnitTest`. Run `./gradlew connectedDebugAndroidTest` separately when a device or emulator is available.
 
 ## Placeholders
 
