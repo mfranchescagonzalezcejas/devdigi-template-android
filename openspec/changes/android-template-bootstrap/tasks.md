@@ -5,7 +5,7 @@
 | Field | Value |
 |---|---|
 | Observed text scope | ~1,250 lines across changed/new text files; wrapper JAR excluded |
-| Exact staged diff | 28 files changed, 1221 insertions, 5 deletions; Gradle wrapper JAR included as binary |
+| Exact staged diff | 28 files changed, 1223 insertions, 5 deletions; Gradle wrapper JAR included as binary |
 | 400-line budget risk | High — explicit size exception required |
 | Chained PRs recommended | No |
 | Suggested review structure | Single coherent bootstrap PR; phase boundaries may be preserved as review sections or commits |

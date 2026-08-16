@@ -69,13 +69,14 @@ build output and IDE-local state are not repository content.
 
 ## Post-review closure verification
 
-After the CodeRabbit review findings were reconciled, maintainer verification
+After all CodeRabbit review findings were reconciled, maintainer verification
 confirmed the final bootstrap state:
 
 - `./gradlew assembleDebug`: exit 0; `BUILD SUCCESSFUL`.
 - `./gradlew lint`: exit 0; `BUILD SUCCESSFUL`.
 - `./gradlew testDebugUnitTest`: exit 0; `BUILD SUCCESSFUL`.
 - `./gradlew connectedDebugAndroidTest`: exit 0; one instrumentation test passed.
+- `.kotlin/` and nested Kotlin persistent project state are ignored by Git.
 - `git diff --check`: exit 0.
 
 The final application handles edge-to-edge system insets, derives the visible

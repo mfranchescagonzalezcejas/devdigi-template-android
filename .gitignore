@@ -25,6 +25,7 @@ Thumbs.db
 
 # Android / Gradle local outputs
 .gradle/
+.kotlin/
 **/build/
 local.properties
 captures/

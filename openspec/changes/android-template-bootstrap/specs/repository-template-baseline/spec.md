@@ -4,7 +4,7 @@
 
 ### Requirement: Public Safety
 
-Content MUST be English, neutral, public-safe, and contain no secrets, personal, organizational, infrastructure, environment, local-path, or remote-account data; placeholders mean unset decisions. `.gitignore` MUST retain base rules plus only `.gradle/`, `**/build/`, `local.properties`, `captures/`, `*.apk`, `*.aab`, `*.jks`, `*.keystore`, and `keystore.properties`. Unrelated documentation, OpenSpec placeholders, and configuration remain unchanged. The approved Android extension MAY modify `docs/repository-engineering.md` and active change artifacts under `openspec/changes/android-template-bootstrap/`; `openspec/config.yaml` remains unchanged.
+Content MUST be English, neutral, public-safe, and contain no secrets, personal, organizational, infrastructure, environment, local-path, or remote-account data; placeholders mean unset decisions. `.gitignore` MUST retain base rules plus only `.gradle/`, `.kotlin/`, `**/build/`, `local.properties`, `captures/`, `*.apk`, `*.aab`, `*.jks`, `*.keystore`, and `keystore.properties`. Unrelated documentation, OpenSpec placeholders, and configuration remain unchanged. The approved Android extension MAY modify `README.md`, `BOOTSTRAP.md`, `docs/repository-engineering.md`, `.gitignore`, and active change artifacts under `openspec/changes/android-template-bootstrap/`; `openspec/config.yaml` remains unchanged.
 (Previously: the ignore list permitted only the inherited technology-neutral entries.)
 
 #### Scenario: Safety
