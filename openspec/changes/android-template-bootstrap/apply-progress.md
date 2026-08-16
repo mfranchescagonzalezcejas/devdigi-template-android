@@ -2,7 +2,7 @@
 
 ## Status
 
-Blocked before implementation. The user-authorized `stacked-to-main` foundation-plus-app slice has a maximum review budget of 400 changed lines.
+Complete — implementation, remediation, fresh-clone validation, and maintainer verification are finished. Earlier blocked or interrupted attempts are preserved below as historical evidence.
 
 ## Diagnosis
 

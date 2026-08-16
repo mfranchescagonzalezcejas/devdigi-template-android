@@ -2,7 +2,7 @@
 
 ## Technical Approach
 
-Extend the inherited governance-only baseline with the smallest buildable native Android project: one `:app` module, Kotlin DSL, a Gradle wrapper, a version catalog, one Compose/Material 3 activity, and one test per source set. The repository-engineering contract remains canonical; automation and product architecture remain absent.
+Extend the inherited governance-only baseline with the smallest buildable native Android project: one `:app` module, Kotlin DSL, a Gradle wrapper, a version catalog, one Compose/Material 3 activity, and one instrumented smoke test. The repository-engineering contract remains canonical; automation and product architecture remain absent. No tautological JVM starter test is retained when there is no meaningful pure-JVM behavior.
 
 ## Version-Selection Gate
 
@@ -18,7 +18,7 @@ This planning-only reconciliation records the approved tuple in `docs/repository
 | Updates | Manual monthly catalog/wrapper review and immediate advisory review; validate the full tuple | Dependabot/Renovate deferred: automation ownership and provider policy are unresolved. |
 | Quality | AGP Android Lint, unit wiring, and device smoke test; no formatter, detekt, or coverage threshold | ktlint/detekt/coverage deferred until real Kotlin logic creates a measurable need. |
 | Hooks/CI | Decline hooks; publish provider-neutral Gradle commands only | Lefthook/pre-commit, GitHub Actions, GitLab, and Jenkins deferred to adopters. |
-| Safety/releases | `com.example.template` / `Template App`; no signing, publishing, credentials, services, or release automation | Release identity, store policy, keys, versioning, provenance, and rollback remain adopter decisions. |
+| Safety/releases | `com.example.androidtemplate` / `Android Template`; no signing, publishing, credentials, services, or release automation | Release identity, store policy, keys, versioning, provenance, and rollback remain adopter decisions. |
 
 ## Data Flow
 
@@ -31,12 +31,12 @@ This planning-only reconciliation records the approved tuple in `docs/repository
 | `settings.gradle.kts`, `build.gradle.kts`, `gradle.properties`, `gradle/libs.versions.toml`, `gradle/wrapper/gradle-wrapper.properties`, `gradle/wrapper/gradle-wrapper.jar`, `gradlew`, `gradlew.bat` | Create | Central repositories, verified plugins/dependencies, reproducible wrapper. |
 | `app/build.gradle.kts`, `app/src/main/AndroidManifest.xml`, `app/src/main/java/com/example/androidtemplate/MainActivity.kt`, `app/src/main/res/values/strings.xml` | Create | Minimal neutral debug application and static Material 3 screen. |
 | `app/src/androidTest/java/com/example/androidtemplate/MainActivityTest.kt` | Create | Visible-screen instrumentation smoke proof; no tautological JVM starter test is retained when there is no meaningful pure-JVM behavior. |
-| `README.md`, `BOOTSTRAP.md`, `docs/repository-engineering.md`, `openspec/config.yaml`, `.gitignore` | Modify | Describe Android scope, adoption decisions, canonical evidence, detected tests, and only `.gradle/`, `**/build/`, `local.properties`, `*.jks`, `*.keystore`, `keystore.properties` exclusions. |
+| `README.md`, `BOOTSTRAP.md`, `docs/repository-engineering.md`, `openspec/config.yaml`, `.gitignore` | Modify | Describe Android scope, adoption decisions, canonical evidence, detected tests, and the approved Android/Gradle local-output and signing-material exclusions: `.gradle/`, `**/build/`, `local.properties`, `captures/`, `*.apk`, `*.aab`, `*.jks`, `*.keystore`, and `keystore.properties`. |
 | `openspec/changes/android-template-bootstrap/specs/{android-template-bootstrap,repository-template-baseline,repository-engineering}/spec.md` | Create | Define the new capability and narrowly permit stack files, Android ignores, and contract rows. |
 
 ## Contracts and Testing
 
-Canonical commands are `./gradlew assembleDebug`, `./gradlew lint`, `./gradlew testDebugUnitTest`, and `./gradlew connectedDebugAndroidTest`; device testing stays a separate slow gate. A fresh clone must work with only JDK and Android SDK prerequisites. `local.properties`, signing material, `google-services.json`, endpoints, accounts, and personal/local data MUST remain untracked. The instrumented test asserts the starter text is visible; the unit test only proves JVM test wiring.
+Canonical commands are `./gradlew assembleDebug`, `./gradlew lint`, `./gradlew testDebugUnitTest`, and `./gradlew connectedDebugAndroidTest`; device testing stays a separate slow gate. A fresh clone must work with only JDK and Android SDK prerequisites. `local.properties`, signing material, `google-services.json`, endpoints, accounts, and personal/local data MUST remain untracked. The instrumented test asserts the starter text is visible. `testDebugUnitTest` remains the canonical JVM quality command, but no tautological JVM starter test is retained when there is no meaningful pure-JVM behavior.
 
 ## Reference Repository Classifications
 
@@ -54,7 +54,7 @@ Reuse `devdigi-music-android` Kotlin DSL, wrapper/catalog, Compose BOM, Activity
 
 ## Migration / Rollout
 
-No data migration. Stacked PR 1 is this six-file documentation reconciliation only; it authorizes no implementation. Later implementation work remains chained and must preserve the approved tuple. Release remains deferred.
+No data migration. The completed bootstrap is delivered as one coherent PR containing the verified Android skeleton, compatible toolchain, adoption contract, OpenSpec specification, and verification evidence. Phase boundaries remain visible in the task history and commits; release remains deferred.
 
 ## Open Questions
 

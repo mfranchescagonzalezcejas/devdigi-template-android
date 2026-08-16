@@ -4,7 +4,7 @@
 
 ### Requirement: Public Safety
 
-Content MUST be English, neutral, public-safe, and contain no secrets, personal, organizational, infrastructure, environment, local-path, or remote-account data; placeholders mean unset decisions. `.gitignore` MUST retain base rules plus only `.gradle/`, `build/`, `local.properties`, `captures/`, `*.apk`, and `*.aab`. `docs` and OpenSpec placeholders/config remain unchanged.
+Content MUST be English, neutral, public-safe, and contain no secrets, personal, organizational, infrastructure, environment, local-path, or remote-account data; placeholders mean unset decisions. `.gitignore` MUST retain base rules plus only `.gradle/`, `**/build/`, `local.properties`, `captures/`, `*.apk`, `*.aab`, `*.jks`, `*.keystore`, and `keystore.properties`. `docs` and OpenSpec placeholders/config remain unchanged.
 (Previously: the ignore list permitted only the inherited technology-neutral entries.)
 
 #### Scenario: Safety

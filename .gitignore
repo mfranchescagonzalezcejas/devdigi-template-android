@@ -30,3 +30,8 @@ local.properties
 captures/
 *.apk
 *.aab
+
+# Android signing material
+*.jks
+*.keystore
+keystore.properties
