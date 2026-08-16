@@ -7,21 +7,25 @@ Give Android teams and solo developers a neutral, buildable starting point. Exte
 ## Scope
 
 ### In Scope
+
 - A single `:app` Kotlin DSL Android skeleton with wrapper, version catalog, manifest, and neutral identifiers.
-- Compose and Material 3 static sample screen, plus minimal unit and instrumented smoke-test wiring.
+- Compose and Material 3 static sample screen, the canonical JVM test task, and an instrumented smoke test without a tautological starter JVM test.
 - Android decision/evidence rows for tooling, validation, dependency review, hooks, CI, and releases.
 - Document the approved compatible tuple: AGP 9.1.0, Gradle 9.3.1, Kotlin/KGP and Compose plugin 2.4.10, Compose BOM 2026.06.00, `compileSdk`/`targetSdk` 36, minSdk 23, and JDK 17. This planning reconciliation does not authorize implementation.
 
 ### Out of Scope
+
 - Navigation, DI, networking, persistence, feature modules, product integrations, signing, publishing, or release automation.
 - CI workflows, hooks, GitHub setting changes, Dependabot, Renovate, and other dependency-update automation in v1.
 
 ## Capabilities
 
 ### New Capabilities
+
 - `android-template-bootstrap`: A minimal, neutral Compose Android application template with documented adoption and validation boundaries.
 
 ### Modified Capabilities
+
 - `repository-template-baseline`: Permit this approved Android extension and narrowly revise the exact ignore-list/exclusion boundary where Android build artifacts require it.
 - `repository-engineering`: Add Android-specific decision and evidence rows while retaining the existing contract as the sole canonical policy record.
 
@@ -34,7 +38,7 @@ Adopt the minimal single-module approach: Gradle Kotlin DSL, a version catalog, 
 | Area | Impact | Description |
 |---|---|---|
 | `settings.gradle.kts`, `build.gradle.kts`, `gradle/**` | New | Verified toolchain, wrapper, and catalog |
-| `app/**` | New | Single Compose app, manifest, static screen, test source sets |
+| `app/**` | New | Single Compose app, manifest, static screen, JVM test-task wiring, and instrumented test source set |
 | `docs/repository-engineering.md`, `BOOTSTRAP.md` | Modified | Android adoption decisions and evidence |
 | `.gitignore`, baseline specs | Modified | Explicitly reconcile Android artifact ignores with baseline rules |
 

@@ -12,6 +12,8 @@ class MainActivityTest {
 
     @Test
     fun starterTextIsVisible() {
-        composeTestRule.onNodeWithText("Android Template").assertIsDisplayed()
+        val starterText = composeTestRule.activity.getString(R.string.app_name)
+
+        composeTestRule.onNodeWithText(starterText).assertIsDisplayed()
     }
 }

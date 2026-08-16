@@ -1,6 +1,7 @@
-## Exploration: android-template-bootstrap
+# Exploration: android-template-bootstrap
 
 ### Current State
+
 This repository is an unchanged, public-safe inheritance of `mfranchescagonzalezcejas/devdigi-template-base` v1.0.0 (single initial commit). It deliberately contains governance and intake artifacts only: no Gradle wrapper, Android module, Kotlin source, manifest, SDK configuration, tests, formatter, linter, CI, hooks, dependency automation, release configuration, or runtime tooling.
 
 The inherited universal decisions remain authoritative:
@@ -15,6 +16,7 @@ The inherited universal decisions remain authoritative:
 | `openspec/specs/*` | Baseline and repository-engineering specs are enduring source of truth; active work lives under `openspec/changes/`. | This exploration is an active change artifact; baseline specs must not be altered during exploration. |
 
 ### Affected Areas
+
 - `openspec/changes/android-template-bootstrap/exploration.md` — active exploration artifact (this file).
 - `docs/repository-engineering.md` — later proposal should resolve Android-specific quality, dependency, hooks, CI, and release decisions.
 - `README.md`, `BOOTSTRAP.md`, `AGENTS.md`, `CONTRIBUTING.md`, `SECURITY.md` — preserve universal policy; make only minimal stack-extension references if required by the proposal.
@@ -24,6 +26,7 @@ The inherited universal decisions remain authoritative:
 - `.gitignore` — candidate Android/Gradle additions require an explicit baseline-spec decision because the inherited ignore list is intentionally exact.
 
 ### Gap Matrix
+
 | Practice | Base provides | Android needs | Proposed implementation | Rationale |
 |---|---|---|---|---|
 | Project structure | Governance-only root | One application module | `:app` only, Kotlin DSL settings/build files, wrapper, catalog, manifest, one Compose activity | Smallest buildable native Android skeleton. |
@@ -58,6 +61,7 @@ The following approved tuple is documentation-only planning evidence; it does no
 **Policy decisions proposed for v1:** one `:app` module; the approved tuple is pinned and updated as a unit; manual dependency reviews; no hooks; provider-neutral CI contract; no release signing/publishing.
 
 ### Reference Repository Assessment
+
 References were inspected as examples only; none supplies template policy.
 
 | Practice observed | Source | Classification | Treatment |
@@ -73,7 +77,8 @@ References were inspected as examples only; none supplies template policy.
 | Flutter/Dart/FVM and Python/Ruff/mypy/pytest tooling | InkScroller examples | Reject | Wrong language and runtime for a native Kotlin template. |
 
 ### Approaches
-1. **Minimal single-module Compose bootstrap** — Add only the native Android build skeleton, static Material 3 screen, and unit/instrumented test wiring.
+
+1. **Minimal single-module Compose bootstrap** — Add only the native Android build skeleton, static Material 3 screen, canonical JVM test task, and instrumented smoke-test wiring.
    - Pros: Fits the inherited template boundary; low maintenance; easy to verify; no premature architecture.
    - Cons: Adopters add their own navigation, data, and domain patterns later.
    - Effort: Medium.
@@ -84,9 +89,11 @@ References were inspected as examples only; none supplies template policy.
    - Effort: High.
 
 ### Recommendation
-Use Approach 1. Plan one neutral `:app` Compose application with Kotlin DSL, a catalog, wrapper, Material 3, AndroidX, manifest, and test source sets. The approved tuple is AGP 9.1.0, Gradle 9.3.1, Kotlin/KGP and Compose plugin 2.4.10, Compose BOM 2026.06.00, API 36 compile/target SDK, minSdk 23, and JDK 17. Keep repository operations as documented decisions and commands, not installed automation.
+
+Use Approach 1. Plan one neutral `:app` Compose application with Kotlin DSL, a catalog, wrapper, Material 3, AndroidX, manifest, JVM test-task wiring, and an instrumented test source set. The approved tuple is AGP 9.1.0, Gradle 9.3.1, Kotlin/KGP and Compose plugin 2.4.10, Compose BOM 2026.06.00, API 36 compile/target SDK, minSdk 23, and JDK 17. Keep repository operations as documented decisions and commands, not installed automation.
 
 ### Risks
+
 - Kotlin 2.4.10 full support ends at AGP 9.1.0; AGP 9.1.1 compatibility must not be inferred.
 - The newer Compose 1.12/BOM direction requires AGP 9.2+ and is intentionally excluded from this conservative tuple.
 - The inherited baseline's exact `.gitignore` requirement conflicts with normal Android/Gradle ignore entries; resolve this explicitly in the proposal/spec before changing it.
@@ -95,4 +102,5 @@ Use Approach 1. Plan one neutral `:app` Compose application with Kotlin DSL, a c
 - Overengineering risk: copying hooks, CI providers, dependency bots, release automation, or reference-app features would turn a template into a product starter.
 
 ### Ready for Proposal
+
 Yes — subject to a proposal that preserves inherited baseline specifications, records this approved tuple without implementing it, and explicitly records the `.gitignore`, toolchain, test, hooks, CI, dependency-update, identifier, and release decisions.

@@ -14,7 +14,7 @@ No generated wrapper, Gradle, Android module, source, test, or ignore change was
 
 | Evidence | Result |
 |---|---|
-| Focused test command and exact result | `curl -fsSL https://raw.githubusercontent.com/gradle/gradle/v9.3.1/gradlew | wc -l` returned `248`; the `gradlew.bat` equivalent returned `93`; total wrapper-script lower bound: `341`. |
+| Focused test command and exact result | `curl -fsSL https://raw.githubusercontent.com/gradle/gradle/v9.3.1/gradlew \| wc -l` returned `248`; the `gradlew.bat` equivalent returned `93`; total wrapper-script lower bound: `341`. |
 | Runtime harness command/scenario and exact result | N/A — implementation was blocked before a buildable Gradle project could exist. |
 | Rollback boundary | This progress artifact only; remove it to undo this blocked apply record. |
 
@@ -139,6 +139,7 @@ The prior blocked evidence above is preserved unchanged. This attempt used the e
 ```json
 {"schema":"gentle-ai.remediation-result/v1","request_id":"android-template-truthful-evidence-remediation-20260814","authorization_token":"sha256:23943c192f39b5d0a5fc1dd8b7d7c3255f1dd176bb0e52ac5ed94dff64d75262","max_changed_lines":200,"strict_tdd":false,"verdict":"pass","within_line_budget":true,"settled":true}
 ```
+
 ```json
 {"schema":"gentle-ai.remediation-evidence/v1","request_id":"android-template-truthful-evidence-remediation-20260814","authorization_token":"sha256:23943c192f39b5d0a5fc1dd8b7d7c3255f1dd176bb0e52ac5ed94dff64d75262","commands":{"version":0,"assembleDebug":0,"lint":0,"testDebugUnitTest":0,"connectedDebugAndroidTest":0,"diff_check":0},"scans":{"java_25":0,"tautological_jvm_test":0,"device_serial":0,"strict_tdd_metadata":0},"settled":true}
 ```

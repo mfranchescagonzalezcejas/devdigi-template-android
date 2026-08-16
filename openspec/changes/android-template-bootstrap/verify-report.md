@@ -1,3 +1,5 @@
+# Verification Report
+
 ```yaml
 schema: gentle-ai.verify-result/v1
 evidence_revision: sha256:23943c192f39b5d0a5fc1dd8b7d7c3255f1dd176bb0e52ac5ed94dff64d75262
@@ -14,7 +16,6 @@ build_exit_code: 0
 build_output_hash: sha256:4b98c6272682d159599fb61d09ce98c0a83cb2053ac997ddeec284283d7031a2
 ```
 
-# Verification Report
 
 **Change**: `android-template-bootstrap` | **Mode**: Standard (`strict_tdd: false`) | **Store**: OpenSpec | **Verdict**: **PASS**
 
@@ -65,3 +66,18 @@ should be revisited if it becomes reproducible.
 A repository-candidate scan confirmed that the connected-device identifier is
 absent from tracked and non-ignored files. Identifiers observed under ignored
 build output and IDE-local state are not repository content.
+
+## Post-review closure verification
+
+After the CodeRabbit review findings were reconciled, maintainer verification
+confirmed the final bootstrap state:
+
+- `./gradlew assembleDebug`: exit 0; `BUILD SUCCESSFUL`.
+- `./gradlew lint`: exit 0; `BUILD SUCCESSFUL`.
+- `./gradlew testDebugUnitTest`: exit 0; `BUILD SUCCESSFUL`.
+- `./gradlew connectedDebugAndroidTest`: exit 0; one instrumentation test passed.
+- `git diff --check`: exit 0.
+
+The final application handles edge-to-edge system insets, derives the visible
+starter label from `R.string.app_name`, and retains the known Compose test-rule
+deprecation warning as non-blocking maintenance.
